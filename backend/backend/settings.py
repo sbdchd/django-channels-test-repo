@@ -9,10 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = os.getenv("DEBUG") == "1"
 
 # SECURITY WARNING: keep the secret key used in production secret!
-if DEBUG:
-    SECRET_KEY = "+p(5+wb+(l2$@iv!1*3=5xnrw2gvi+l$kuo9s7=u6*)ri4v6as"
-else:
-    SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+SECRET_KEY = "+p(5+wb+(l2$@iv!1*3=5xnrw2gvi+l$kuo9s7=u6*)ri4v6as"
 
 ALLOWED_HOSTS = ["*"]
 

@@ -4,7 +4,7 @@ from typing import List
 
 import click
 
-from cli.decorators import load_env, setup_django
+from cli.decorators import setup_django
 
 
 @click.group()
@@ -12,13 +12,17 @@ def cli():
     pass
 
 
-@cli.command(help="test services", context_settings=dict(ignore_unknown_options=True))
+@cli.command(help="test backend", context_settings=dict(ignore_unknown_options=True))
 @click.argument("test_args", nargs=-1, type=click.UNPROCESSED)
-@load_env
 def test(test_args: List[str]) -> None:
-    """Run tests for service. Defaults to all."""
-
     os.environ["TESTING"] = "1"
+    os.environ["DEBUG"] = "1"
+    os.environ[
+        "DATABASE_URL"
+    ] = "postgres://steve@localhost:5432/recipeyak?connect_timeout=10"
+
+    # need to uncomment the rel config in settings.py for the redis layer to be used
+    os.environ["REDIS_CHANNEL_URL"] = "redis://localhost:6379"
 
     subprocess.run(["pytest", *test_args], cwd="backend")
 

@@ -2,7 +2,6 @@ import hashlib
 import logging
 from typing import List, Optional
 
-from allauth.socialaccount.models import EmailAddress
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
@@ -25,7 +24,6 @@ class MyUserManager(BaseUserManager):
             user = self.model(email=self.normalize_email(email))
             user.set_password(password)
             user.save(using=self._db)
-            EmailAddress.objects.create(user=user, email=email)
             logger.info("Created new user: %s", user)
             return user
 

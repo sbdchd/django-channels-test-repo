@@ -1,5 +1,4 @@
 import os
-from typing import List
 
 import dj_database_url
 from django.conf import global_settings
@@ -15,10 +14,7 @@ if DEBUG:
 else:
     SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-ALLOWED_HOSTS: List[str] = [".recipeyak.com"]
-
-if DEBUG:
-    ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 

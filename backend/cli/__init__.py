@@ -15,14 +15,10 @@ def cli():
 @cli.command(help="test backend", context_settings=dict(ignore_unknown_options=True))
 @click.argument("test_args", nargs=-1, type=click.UNPROCESSED)
 def test(test_args: List[str]) -> None:
-    os.environ["TESTING"] = "1"
     os.environ["DEBUG"] = "1"
-    os.environ[
-        "DATABASE_URL"
-    ] = "postgres://steve@localhost:5432/recipeyak?connect_timeout=10"
-
-    # need to uncomment the rel config in settings.py for the redis layer to be used
-    os.environ["REDIS_CHANNEL_URL"] = "redis://localhost:6379"
+    os.environ.setdefault("DATABASE_URL", "postgres://postgres@127.0.0.1:5432/postgres")
+    # need to uncomment the relevant config in settings.py for the redis layer to be used
+    os.environ.setdefault("REDIS_CHANNEL_URL", "redis://localhost:6379")
 
     subprocess.run(["pytest", *test_args], cwd="backend")
 

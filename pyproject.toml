@@ -5,7 +5,6 @@ description = ""
 authors = ["Steve Dignam <steve@dignam.xyz>", "Christopher Dignam <chris@dignam.xyz>"]
 packages = [
     { include = "cli", from = "backend" },
-    { include = "pytest_plugin", from = "backend" },
 ]
 
 [tool.poetry.dependencies]
@@ -44,9 +43,6 @@ pytest-asyncio = "^0.10.0"
 
 [tool.poetry.scripts]
 yak = 'cli:cli'
-
-[tool.poetry.plugins."pytest11"]
-"pytest_plugin" = "pytest_plugin.plugin"
 
 [tool.black]
 py36 = true

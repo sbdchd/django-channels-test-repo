@@ -17,7 +17,6 @@ click = "^7.0"
 typing_extensions = "^3.7"
 channels = "^2.2"
 channels_redis = "^2.4"
-pydantic = "^0.32.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.4.0"

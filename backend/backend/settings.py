@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "user_sessions",
+    "django.contrib.sessions",
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
     "rest_framework",
@@ -55,7 +55,7 @@ SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "user_sessions.middleware.SessionMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -64,8 +64,6 @@ MIDDLEWARE = [
     "django.middleware.http.ConditionalGetMiddleware",
 ]
 
-
-SESSION_ENGINE = "user_sessions.backends.db"
 
 AUTH_USER_MODEL = "core.MyUser"
 

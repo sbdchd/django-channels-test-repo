@@ -5,8 +5,6 @@ from rest_framework.test import APIClient
 
 from core.models import MyUser, Team
 
-getLogger("flake8").propagate = False
-
 
 @pytest.fixture
 def user():

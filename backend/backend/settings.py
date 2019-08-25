@@ -43,7 +43,7 @@ CHANNEL_LAYERS = {
 }
 
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": ("core.auth.permissions.DisallowAny",),
+    "DEFAULT_PERMISSION_CLASSES": ("core.permissions.DisallowAny",),
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
     ),

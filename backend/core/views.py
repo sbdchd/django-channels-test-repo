@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.request import Request
 from rest_framework.response import Response
 
-from core.auth.permissions import IsTeamMember
+from core.permissions import IsTeamMember
 
 
 @api_view(["POST"])

@@ -17,9 +17,6 @@ def cli():
 def test(test_args: List[str]) -> None:
     os.environ["DEBUG"] = "1"
     os.environ.setdefault("DATABASE_URL", "postgres://postgres@127.0.0.1:5432/postgres")
-    # need to uncomment the relevant config in settings.py for the redis layer to be used
-    os.environ.setdefault("REDIS_CHANNEL_URL", "redis://localhost:6379")
-
     subprocess.run(["pytest", *test_args], cwd="backend")
 
 

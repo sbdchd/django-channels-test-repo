@@ -495,17 +495,6 @@ version = "3.4.8"
 pytest = ">=3.6"
 
 [[package]]
-category = "dev"
-description = "Pytest plugin to randomly order tests and control random.seed."
-name = "pytest-randomly"
-optional = false
-python-versions = ">=3.4"
-version = "2.1.1"
-
-[package.dependencies]
-pytest = "*"
-
-[[package]]
 category = "main"
 description = "World timezone definitions, modern and historical"
 name = "pytz"
@@ -619,7 +608,7 @@ version = "4.6.0"
 setuptools = "*"
 
 [metadata]
-content-hash = "ceb426bd08ad599d8ee0ec3ec453eeb208bd55fb3d4660c5cdf3f6792a175c20"
+content-hash = "e96ace446e425e464bcfdaad40ac7653045acd458c57cbe9a21e40d27f520e9c"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -671,7 +660,6 @@ pyhamcrest = ["6b672c02fdf7470df9674ab82263841ce8333fb143f32f021f6cb26f0e512420"
 pytest = ["3f193df1cfe1d1609d4c583838bea3d532b18d6160fd3f55c9447fdca30848ec", "e246cf173c01169b9617fc07264b7b1316e78d7a650055235d6d897bc80d9660"]
 pytest-asyncio = ["9fac5100fd716cbecf6ef89233e8590a4ad61d729d1732e0a96b84182df1daaf", "d734718e25cfc32d2bf78d346e99d33724deeba774cc4afdf491530c6184b63b"]
 pytest-django = ["30d773f1768e8f214a3106f1090e00300ce6edfcac8c55fd13b675fe1cbd1c85", "4d3283e774fe1d40630ee58bf34929b83875e4751b525eeb07a7506996eb42ee"]
-pytest-randomly = ["0ff564fabb638ab52d535d8ce1da71353c7ecd54edcc5dc117f6f21f8269cfef", "f76a068dcadb4ffbd4f6c55dd447cf95fb78cfe4f3f1445c3bee5657fdf5b3d1"]
 pytz = ["32b0891edff07e28efe91284ed9c31e123d84bea3fd98e1f72be2508f43ef8d9", "d5f05e487007e29e03409f9398d074e158d920d36eb82eaf66fb1136b0c5374c"]
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 sqlparse = ["ce028444cfab83be538752a2ffdb56bc417b7784ff35bb9a3062413717807dec", "d9cf190f51cbb26da0412247dfe4fb5f4098edb73db84e02f9fc21fdca31fed4"]

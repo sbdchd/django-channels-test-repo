@@ -44,13 +44,19 @@ def get_headers_for_user(
 # see: https://github.com/django/channels/issues/1091
 @pytest.mark.django_db(transaction=True)
 @pytest.mark.asyncio
-async def test_pub_sub_consumer(
-    client: APIClient, user: MyUser, team: Team, user2: MyUser, user3: MyUser
-) -> None:
+async def test_pub_sub_consumer() -> None:
     """
     ensure that we broadcast schedule-presence events correctly
     """
     path = "/ws/"
+
+    client = APIClient()
+    user = await database_sync_to_async(MyUser.objects.create_user)(email="a@example.org")
+    user2 = await database_sync_to_async(MyUser.objects.create_user)(email="b@example.org")
+    user3 = await database_sync_to_async(MyUser.objects.create_user)(email="c@example.org")
+    team = await database_sync_to_async(Team.objects.create)(name="ACME Team Name")
+    await database_sync_to_async(team.force_join_admin)(user=user)
+
 
     communicator_one = WebsocketCommunicator(
         application, path, headers=get_headers_for_user(client=client, user=user)
